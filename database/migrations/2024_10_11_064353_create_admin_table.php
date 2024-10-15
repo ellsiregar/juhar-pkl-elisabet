@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('username', 15)->unique();
             $table->string('password', 255);
             $table->string('nama_admin', 25);
-            $table->string('foto', 50)->nullabel();
+            $table->string('foto', 50)->nullable();
             $table->timestamps();
         });
     }
