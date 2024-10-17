@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('password', 255);
             $table->string('email', 50);
             $table->string('nama_guru', 25);
-            $table->string('foto', 50)->nullabel();
+            $table->string('foto', 50)->nullable();
             $table->timestamps();
         });
     }
