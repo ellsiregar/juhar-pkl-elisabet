@@ -22,7 +22,7 @@ return new class extends Migration
             $table->char('nisn', 10)->unique();
             $table->string('password', 255);
             $table->string('nama_siswa', 25);
-            $table->string('foto', 50)->nullabel();
+            $table->string('foto', 50)->nullable();
             $table->timestamps();
         });
     }
