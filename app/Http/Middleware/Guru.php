@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class Unauthhirized
+class Guru
 {
     /**
      * Handle an incoming request.
@@ -15,12 +15,16 @@ class Unauthhirized
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
+
     {
-        if (Auth::guard('admin')->check()) {
-            return redirect()->route('admin.dashboard');
-        }elseif (Auth::guard('guru')->check()) {
-            return redirect()->route('guru.dashboard');
+      if (!Auth::guard('guru')->check()) {
+            return redirect()->route('guru.login')->withErrors(['login_error' => 'Silahkan Login Untuk Melanjutkan.']);
         }
+        
         return $next($request);
+
+
     }
+
 }
+

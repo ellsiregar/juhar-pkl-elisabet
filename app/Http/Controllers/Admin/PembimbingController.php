@@ -7,6 +7,7 @@ use App\Models\Admin\Dudi;
 use App\Models\Admin\Guru;
 use App\Models\Admin\Pembimbing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PembimbingController extends Controller
 {
@@ -69,7 +70,14 @@ class PembimbingController extends Controller
         $pembimbing = Pembimbing::find($id);
 
         $pembimbing->delete();
-
         return redirect()->back()->with('success', 'Data pembimbing Berhasil di Hapus');
 }
+
+    public function pembimbingGuru()
+    {
+        $id_guru = Auth::guard('guru')->user()->id_guru;
+        $pembimbings = Pembimbing::where('id_guru', $id_guru)->get();
+        return view('guru.pembimbing', compact('pembimbings'));
+
+    }
 }
