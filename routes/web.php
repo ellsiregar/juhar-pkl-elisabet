@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Admincontroller;
 use App\Http\Controllers\Admin\DudiController;
 use App\Http\Controllers\Admin\GuruController;
+use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\Admin\PembimbingController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Auth\AdminLoginController;
@@ -68,6 +69,8 @@ Route::middleware(['admin'])->group(function () {
         Route::get('/guru/pembimbing/{id}/siswa', [SiswaController::class, 'siswaGuru'])->name('guru.pembimbing.siswa');
         Route::get('/guru/profile', [GuruController::class, 'profile'])->name('guru.profile');
         Route::put('/guru/profile/update', [GuruController::class, 'updateGuru'])->name('guru.profile.update');
+        Route::get('/guru/pembimbing/{id}/siswa/{id_siswa}/kegiatan', [KegiatanController::class, 'Kegiatan'])->name('guru.pembimbing.siswa.kegiatan');
+        Route::get('/guru/pembimbing/{id}/siswa/{id_siswa}/kegiatan/detail/{id_kegiatan}', [KegiatanController::class, 'detailKegiatan'])->name('guru.pembimbing.siswa.kegiatan.detail');
 
 
     });
