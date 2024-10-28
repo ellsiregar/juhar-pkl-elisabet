@@ -51,6 +51,11 @@ return [
             'driver' => 'session',
             'provider' => 'gurus',
         ],
+
+        'siswa' => [
+            'driver' => 'session',
+            'provider' => 'siswas',
+        ],
     ],
 
     /*
@@ -85,6 +90,12 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\Admin\Guru::class),
         ],
+
+        'siswas' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Admin\Siswa::class),
+        ],
+
 
         // 'users' => [
         //     'driver' => 'database',

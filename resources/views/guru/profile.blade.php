@@ -26,8 +26,7 @@
                     @method('PUT')
                     <div class="mb-3">
                         <label for="nip" class="form-label">NIP</label>
-                        <input type="text" class="form-control" id="nip" name="nip"
-                            value="{{ old('nip', $profile->nip) }}">
+                        <input type="text" class="form-control" id="nip" name="nip"value="{{ old('nip', $profile->nip ?? ) }}" readonly>
                         <div class="text-danger">
                             @error('nip')
                                 {{ $message }}
@@ -36,8 +35,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email" name="email"
-                            value="{{ old('email', $profile->email) }}">
+                        <input type="text" class="form-control" id="email" name="email"value="{{ old('email', $profile->email) }}">
                         <div class="text-danger">
                             @error('email')
                                 {{ $message }}
@@ -54,8 +52,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="nama_guru" class="form-label">Nama Guru</label>
-                            <input type="text" class="form-control" id="nama_guru" name="nama_guru"
-                                value="{{ old('nama_guru', $profile->nama_guru) }}">
+                            <input type="text" class="form-control" id="nama_guru" name="nama_guru"value="{{ old('nama_guru', $profile->nama_guru) }}">
                             <div class="text-danger">
                                 @error('nama_guru')
                                     {{ $message }}

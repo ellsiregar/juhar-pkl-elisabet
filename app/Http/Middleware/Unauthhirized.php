@@ -20,6 +20,8 @@ class Unauthhirized
             return redirect()->route('admin.dashboard');
         }elseif (Auth::guard('guru')->check()) {
             return redirect()->route('guru.dashboard');
+        }elseif (Auth::guard('siswa')->check()) {
+            return redirect()->route('siswa.dashboard');
         }
         return $next($request);
     }

@@ -1,30 +1,9 @@
-@extends('guru.layouts.app')
+@extends('siswa.layouts.app')
 
 @section('title', 'kegiatan')
 
 @section('content')
 
-
-@if ($errors->has('access'))
-<div class="alert alert-danger">
-    {{ $errors->first('access') }}
-</div>
-@endif
-@if ($kegiatan)
-<div class="row bg-light rounded align-items-center mx-0">
-    <div class="col-md-6">
-       <table>
-        <tr>
-            <td width='100'>Nama Siswa</td>
-            <td width="10">:</td>
-            <td>{{ $kegiatan->kegiatanSiswa->nama_siswa }}</td>
-        </tr>
-
-       </table>
-    </div>
-</div>
-<br>
-@endif
 <div class="row g-4">
     <div class="col-12">
         <div class="bg-light rounded h-100 p-4">
@@ -35,6 +14,7 @@
             @endif
             <h6 class="mb-4">Data kegiatan</h6>
             <div class="table-responsive">
+                <a href="" class="btn btn-primary btn-sm">Tambah</a>
                 <table class="table" id="kegiatan">
                     <thead>
                         <tr>
@@ -51,7 +31,8 @@
                                 <td>{{ $kegiatan->tanggal_kegiatan }}</td>
                                 <td>{{ $kegiatan->nama_kegiatan }}</td>
                                 <td>
-                                    <a href="{{ route('guru.pembimbing.siswa.kegiatan.detail', ['id'=> $id_pembimbing, 'id_siswa' => $kegiatan->id_siswa, 'id_kegiatan' => $kegiatan->id_kegiatan]) }}" class="btn btn-info btn-sm">Detail</a>
+                                    <a href="" class="btn btn-warning btn-sm">edit</a>
+                                    <a href="" class="btn btn-danger btn-sm">Hapus</a>
 
                                 </td>
                             </tr>
