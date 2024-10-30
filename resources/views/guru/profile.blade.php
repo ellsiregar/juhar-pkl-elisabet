@@ -14,8 +14,7 @@
                 @endif
                 <div class="d-flex align-items-center justify-content-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="{{ asset('storage/' . $profile->foto) }}" alt=""
-                            style="width: 100px; height: 100px;">
+                        <img class="rounded-circle" src="{{ asset('storage/' . $profile->foto) }}" alt=""style="width: 100px; height: 100px;">
                         <div
                             class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
                         </div>
@@ -26,7 +25,7 @@
                     @method('PUT')
                     <div class="mb-3">
                         <label for="nip" class="form-label">NIP</label>
-                        <input type="text" class="form-control" id="nip" name="nip"value="{{ old('nip', $profile->nip ?? ) }}" readonly>
+                        <input type="text" class="form-control" id="nip" name="nip"value="{{ old('nip', $profile->nip ?? 'Belum Punya NIP') }}" readonly>
                         <div class="text-danger">
                             @error('nip')
                                 {{ $message }}

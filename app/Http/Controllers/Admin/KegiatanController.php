@@ -14,6 +14,7 @@ class KegiatanController extends Controller
     public function kegiatan($id, $id_siswa)
     {
         $loginGuru = Auth::guard('guru')->user()->id_guru;
+
         $siswa = Siswa::find($id_siswa);
 
         if (!$siswa || !$siswa->id_pembimbing) {
@@ -58,7 +59,7 @@ class KegiatanController extends Controller
             return back()->withErrors(['access' => 'Kegiatan tidak tersedia']);
         }
 
-        return view('guru.detail', compact('id', 'kegiatan'));
+        return view('guru.detail_kegiatan', compact('id', 'kegiatan'));
     }
 
     public function cariKegiatan(Request $request, $id, $id_siswa)
@@ -97,4 +98,7 @@ class KegiatanController extends Controller
 
         return view('guru.kegiatan', compact('kegiatans', 'kegiatan', 'id_pembimbing', 'id_siswa', 'tanggalAwal', 'tanggalAkhir'));
     }
+
+
+
 }

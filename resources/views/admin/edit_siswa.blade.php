@@ -45,7 +45,7 @@
                     @enderror
                 </div>
                 <div class="mb-2">
-                    <img src="{{ asset('storage/' .$siswa->foto) }}" alt="">
+                    <img src="{{ asset('storage/' .$siswa->foto) }}" alt="" height="100">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
